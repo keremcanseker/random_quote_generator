@@ -25,17 +25,17 @@ function App() {
     return (
 
         <div
-            id="container"
-            className="flex  flex-col items-center mx-auto justify-center h-screen w-full bg-sky-500 text-xl text-white"
+            id="container "
+            className="flex flex-col items-center justify-center w-full h-screen mx-auto text-xl text-white bg-zinc-800"
         >
-            <div id="wrapper" className="w-[550px] h-[300px] bg-stone-400">
-                <div id="quote-box" class="text-center w-[450] h-auto p-5">
+            <div id="wrapper" className="w-[550px] h-[300px] bg-stone-400 rounded">
+                <div id="quote-box" className="text-center w-[450] h-auto p-5">
                     <div>
                         <div id="quote-text">
                             {
                                 randomQuote ? (
                                     <>
-                                        <h5 className="">{randomQuote.author || "No author"}</h5>
+                                        <h5 className="font-extrabold">{randomQuote.author.toUpperCase() || "No author"}</h5>
                                         <p className="text-xl">&quot;{randomQuote.text}&quot;</p>
                                     </>
                                 ) : (
@@ -44,8 +44,8 @@ function App() {
                             }
                         </div>
 
-                        <div id="buttons">
-                            <button onClick={getNewQuote} class="bg-red">New Quote</button>
+                        <div id="buttons" className="inline-block space-x-2 end-1.5 mt-[20px]">
+                            <button onClick={getNewQuote} className="border-">New Quote</button>
                             <a href="">
                                 <i className="fa fa-twitter"></i>
                             </a>
@@ -78,7 +78,3 @@ function App() {
 ReactDOM.render(<App />, document.getElementById("app"));
 
 
-
-/*   {quotes.map(quote => (
-                <div>{quote.text}</div>
-            ))} */
